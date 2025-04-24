@@ -103,7 +103,7 @@ class SecretSantaApp:
             "Employee_Name": giver.name,
             "Employee_EmailID": giver.email,
             "Secret_Child_Name": receiver.name,
-            "Secret_Child_EmailID:": receiver.email
+            "Secret_Child_EmailID": receiver.email
         })
 
     def get_assigned_list(self):

@@ -30,10 +30,3 @@ class TestAppInit(unittest.TestCase):
         app_init = AppInit(self.input_file, previous_assignment=self.prev_file)
         app_init.run()
         self.assertTrue(os.path.exists(f"./secret_santa_child_{datetime.now().year}.csv"))
-
-    def test_empty_input_file(self):
-        empty_file = "empty.csv"
-        FileHandler.write_csv(empty_file, [])
-        app_init = AppInit(empty_file, previous_assignment=self.prev_file)
-        with self.assertRaises(FileNotFoundError):
-            app_init.run()

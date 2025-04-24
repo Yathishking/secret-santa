@@ -12,8 +12,8 @@ class AppInit:
         Initialize the AppInit class with input and output paths.
 
         :param input_path: Path to the input CSV file
-        :param ouptut_path: Path to the output CSV file
         :param previous_assignment: Path to the previous year's secret santa CSV file
+        :param ouptut_path: Path to the output CSV file
         """
         self.input_path = input_path
         self.output_path = ouptut_path
@@ -30,7 +30,7 @@ class AppInit:
         if not os.path.exists(self.input_path):
             raise FileNotFoundError(f"Input file '{self.input_path}' not found.")
     
-        if not os.path.exists(self.previous_assignment):
+        if not self.previous_assignment or not os.path.exists(self.previous_assignment):
             raise FileNotFoundError(f"Previous assignment file '{self.previous_assignment}' not found.")
 
         # read the input file and create Employee objects
@@ -49,7 +49,7 @@ class AppInit:
         print("Please check the output for details.")
     
         # Write the output to the csv
-        output_file_path = self.output_path or f"./secret_santa_child_{datetime.now().year}.csv"
+        output_file_path = self.output_path or f"secret_santa_child_{datetime.now().year}.csv"
         FileHandler.write_csv(output_file_path, assignments)
         print(f"Output csv: {output_file_path}")
         
