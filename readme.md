@@ -90,6 +90,11 @@ All the executables can be found in the `dist` folder.
     ```
 4. View the generated pairings in the output csv file.
 
+### Output
+
+1. The output file will be generated in the folder of executable or in the folder where you run the script.
+2. The output file will be named `secret_santa_child_2025.csv` by default, but you can specify a different name by providing the `output_file_path` argument.
+
 ### Test
 
 1. Run the following command to run the tests in a terminal in the folder root.
