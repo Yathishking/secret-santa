@@ -6,8 +6,14 @@ A Python-based application to assign secret santa to a given list of employees.
 
 - Randomized pairings for participants.
 - Ensures no one is paired with themselves.
-- Option to exclude specific pairings.
+- Checks for previous pairings to avoid repetition.
 - Easy-to-use and customizable.
+- Extensible for future enhancements.
+- Generates a CSV file with the pairings.
+- Can be run as a script or as an executable.
+- Compatible with both Windows and Linux.
+- Unit tests for core functionalities.
+
 
 ## Folder Structure
 ```
@@ -89,6 +95,19 @@ All the executables can be found in the `dist` folder.
     secret-santa employee_list_csv_path previous_csv_path [optional] output_file_path
     ```
 4. View the generated pairings in the output csv file.
+
+
+### Example:
+For code:
+```
+    python main.py data/employee_list.csv data/santa_secret_child_2023.csv
+```
+
+For executable:
+```
+    main.exe data/employee_list.csv data/santa_secret_child_2023.csv
+```
+
 
 ### Output
 
